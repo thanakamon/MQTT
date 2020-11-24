@@ -12,7 +12,7 @@ Mosquitto คือ ​MQTT Broker อันดับต้นที่ถูก
     sudo apt-get install mosquitto mosquitto-clients
 ```
 
-เมื่อทำการติดตั้งเรียบร้อย สามารถทำการทดสอบได้โดยเปิด terminal ขึมา 2 terminal โดย terminal แรกจะทำหน้าที่เป็น subscriber โดยในที่นี้จะทำการ subscribe ไปยัง topic ที่มีชื่อว่า mqtt ด้วยคำสั่ง
+เมื่อทำการติดตั้งเรียบร้อย สามารถทำการทดสอบได้โดยเปิด terminal -7hoมา 2 terminal โดย terminal แรกจะทำหน้าที่เป็น subscriber โดยในที่นี้จะทำการ subscribe ไปยัง topic ที่มีชื่อว่า mqtt ด้วยคำสั่ง
 ```
     mosquitto_sub -h localhost -t mqtt
 ```
@@ -42,6 +42,7 @@ Mosquitto คือ ​MQTT Broker อันดับต้นที่ถูก
     sudo reboot
 ```
 4. ทดสอบการทำงานโดยเปิด terminal ขึ้นมาจำนวน 2 terminal 
+
     1. terminal ที่ทำหน้าที่เป็น subsciber จะ subscibe ไปยังยัง topic ที่มีชื่อว่า mqtt โดยใช้คำสั่ง
     ```
         mosquitto_sub -h localhost -u username -P password -t mqtt
