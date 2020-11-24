@@ -1,6 +1,9 @@
 # MQTT Server with Node.js
 ## MQTT Server
-MQTT (Message Queueing Telementry Transport protocol) คือ โปรโตคอลที่ใช้สื่อสารระหว่าง m2m(machine to machine) โดยออกแบบมาเพื่อรับส่งข้อมูลซึ่งมีตัวกลางในการรับส่งคือ **MQTT Broker** โดยภายในโปรโตคอลจะมีผู้ส่งคือ publisher ผู้รับคือ subscriber ในการทำงานนั้นผู้ส่งจะทำการส่งข้อความไปยัง topic ใดๆ โดยผู้รับที่ติดตาม topic นั้นๆ อยู่จะได้รับข้อความที่ผู้ส่งทำการส่งมา ซึ่งโปรโตคอลนี้มีขนาดเล็กและใช้ bandwidth ต่ำกว่าพวก http จึงทำให้ MQTT ถูกนำไปประยุกต์ใช้กับอุปกรณ์ IOT มากกว่า http
+MQTT (Message Queueing Telementry Transport protocol) คือ โปรโตคอลที่ใช้สื่อสารระหว่าง m2m(machine to machine) โดยออกแบบมาเพื่อรับส่งข้อมูลmujมีตัวกลางในการรับส่งคือ **MQTT Broker** 
+- โปรโตคอลจะมีผู้ส่งคือ publisher ผู้รับคือ subscriber 
+- การทำงานผู้ส่งจะทำการส่งข้อความไปยัง topic นั้น โดยผู้รับที่ติดตาม topic นั้นๆจะได้รับข้อความที่ผู้ส่งทำการส่งมา 
+- โปรโตคอลนี้มีขนาดเล็กและใช้ bandwidth ต่ำกว่าพวก http จึงทำให้ MQTT ถูกนำไปประยุกต์ใช้กับอุปกรณ์ IOT มากกว่า http
 
 ### Mosquitto MQTT Broker
 Mosquitto คือ ​MQTT Broker อันดับต้นที่ถูกใช้งาน โดยใน repo นี้จะทำการติดตั้ง Mosquitto บน RaspberryPI3 ด้วยคำสั่ง
@@ -99,7 +102,7 @@ Mosquitto คือ ​MQTT Broker อันดับต้นที่ถูก
 ```
 ![mqtt.png](image/mqtt.PNG)
 
-และหากมี subscriber ทำการ subscribe มายัง topic ที่มีชื่อว่า mqtt แล้ว subscriber นั้นจะได้รับข้อความเหมือนดังรูปข้างต้น
+หากมี subscriber ทำการ subscribe มายัง topic ที่มีชื่อว่า mqtt แล้ว subscriber นั้นจะได้รับข้อความเหมือนดังรูปข้างต้น
 
 และหากมี publisher ทำการเชื่อมต่อมายัง topic mqtt และทำการ publish ข้อความขึ้นมา ข้อความดังกล่าวจะปรากฎในหน้า console เช่นเดียวกัน 
 
