@@ -1,6 +1,6 @@
 # MQTT Server with Node.js
 ## MQTT Server
-MQTT (Message Queueing Telementry Transport protocol) คือ โปรโตคอลที่ใช้สื่อสารระหว่าง machine to machine โดยออกแบบมาเพื่อรับส่งข้อมูลซึ่งมีตัวกลางในการรับส่งคือ **MQTT Broker** โดยภายในโปรโตคอลจะมีผู้ส่งคือ publisher ผู้รับคือ subscriber ในการทำงานนั้นผู้ส่งจะทำการส่งข้อความไปยัง topic ใดๆ โดยผู้รับที่ติดตาม topic นั้นๆ อยู่จะได้รับข้อความที่ผู้ส่งทำการส่งมา ซึ่งโปรโตคอลนี้มีขนาดเล็กและใช้ bandwidth ต่ำกว่าพวก http จึงทำให้ MQTT ถูกนำไปประยุกต์ใช้กับอุปกรณ์ IOT มากกว่า http
+MQTT (Message Queueing Telementry Transport protocol) คือ โปรโตคอลที่ใช้สื่อสารระหว่าง m2m(machine to machine) โดยออกแบบมาเพื่อรับส่งข้อมูลซึ่งมีตัวกลางในการรับส่งคือ **MQTT Broker** โดยภายในโปรโตคอลจะมีผู้ส่งคือ publisher ผู้รับคือ subscriber ในการทำงานนั้นผู้ส่งจะทำการส่งข้อความไปยัง topic ใดๆ โดยผู้รับที่ติดตาม topic นั้นๆ อยู่จะได้รับข้อความที่ผู้ส่งทำการส่งมา ซึ่งโปรโตคอลนี้มีขนาดเล็กและใช้ bandwidth ต่ำกว่าพวก http จึงทำให้ MQTT ถูกนำไปประยุกต์ใช้กับอุปกรณ์ IOT มากกว่า http
 
 ### Mosquitto MQTT Broker
 Mosquitto คือ ​MQTT Broker อันดับต้นที่ถูกใช้งาน โดยใน repo นี้จะทำการติดตั้ง Mosquitto บน RaspberryPI3 ด้วยคำสั่ง
@@ -43,7 +43,7 @@ Mosquitto คือ ​MQTT Broker อันดับต้นที่ถูก
     ```
         mosquitto_sub -h localhost -u username -P password -t mqtt
     ``` 
-    2. terminal ที่ทำหน้าที่เป็น publisher จะทำ publish ไปยัง topic ที่มีชื่อว่า mqtt โดยใช้คำสั่ง
+    2. terminal ที่ทำหน้าที่เป็น publisher จะทำ publish ไปยัง topic ที่มีชื่อว่า mqtt โดยใช้คำสั่ง โดยส่งคำว่า hello
     ```
         mosquitto_pub -h localhost -u username -P password -t mqtt -m "hello"
     ```
@@ -97,3 +97,10 @@ Mosquitto คือ ​MQTT Broker อันดับต้นที่ถูก
 ```
     node server
 ```
+![mqtt.png](image/mqtt.PNG)
+
+และหากมี subscriber ทำการ subscribe มายัง topic ที่มีชื่อว่า mqtt แล้ว subscriber นั้นจะได้รับข้อความเหมือนดังรูปข้างต้น
+
+ในทางตรงกันข้ามหากมี publisher ทำการเชื่อมต่อมายัง topic mqtt และทำการ publish ข้อความขึ้นมาแล้ว ข้อความดังกล่าวจะปรากฎในหน้า console เช่นเดียวกัน อันแสดงได้ดังรูป
+
+![mqtt.png](image/mqtt3.PNG)
