@@ -25,5 +25,5 @@ client.on('message',(topic,message)=>{
 });
 
 setInterval(()=>{
-	client.publish("mqtt","hello from NodeJS");
+	client.publish("mqtt","Hi from NodeJS");
 },5000);
