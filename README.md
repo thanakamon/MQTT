@@ -1,0 +1,3 @@
+# MQTT Server with Node.js
+## MQTT Server
+    MQTT (Message Queueing Telementry Transport protocol) คือ โปรโตคอลที่ใช้สื่อสารระหว่าง machine to machine โดยออกแบบมาเพื่อรับส่งข้อมูลซึ่งมีตัวกลางในการรับส่งคือ **MQTT Broker** โดยภายในโปรโตคอลจะมีผู้ส่งคือ publisher และผู้รับคือ subscriber ในการทำงานนั้นผู้ส่งจะทำการส่งข้อความไปยัง topic ใด ๆ โดยผู้รับที่ติดตาม (subscribe) topic นั้น ๆ อยู่จะได้รับข้อความที่ผู้ส่งทำการส่งมา ซึ่งโปรโตคอลนี้มีขนาดเล็กและใช้ bandwidth ต่ำกว่าพวก http จึงทำให้ MQTT ถูกนำไปประยุกต์ใช้กับอุปกรณ์ IOT มากกว่า http
